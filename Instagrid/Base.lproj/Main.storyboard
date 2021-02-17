@@ -24,7 +24,7 @@
                                 <rect key="frame" x="20" y="176" width="150" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="08J-bH-9bS"/>
-                                    <constraint firstAttribute="width" constant="150" id="dNV-pE-axZ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="dNV-pE-axZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="24"/>
                                 <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,7 +59,7 @@
                                             <constraint firstAttribute="width" constant="70" id="cJ4-bW-T4n"/>
                                             <constraint firstAttribute="height" constant="70" id="lgY-oU-dGw"/>
                                         </constraints>
-                                        <state key="normal" image="Layout 1" backgroundImage="Selected">
+                                        <state key="normal" image="Selected" backgroundImage="Layout 1">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                     </button>
@@ -69,7 +69,7 @@
                                             <constraint firstAttribute="height" constant="70" id="1CH-6F-h6a"/>
                                             <constraint firstAttribute="width" constant="70" id="q2S-tU-CoU"/>
                                         </constraints>
-                                        <state key="normal" image="Layout 2" backgroundImage="Selected"/>
+                                        <state key="normal" image="Selected" backgroundImage="Layout 2"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohi-1N-0Jt">
                                         <rect key="frame" x="0.0" y="220" width="70" height="70"/>
@@ -77,7 +77,7 @@
                                             <constraint firstAttribute="height" constant="70" id="b5d-Vw-HH8"/>
                                             <constraint firstAttribute="width" constant="70" id="lKo-lu-hgu"/>
                                         </constraints>
-                                        <state key="normal" image="Layout 3" backgroundImage="Selected"/>
+                                        <state key="normal" image="Selected" backgroundImage="Layout 3"/>
                                     </button>
                                 </subviews>
                                 <constraints>
