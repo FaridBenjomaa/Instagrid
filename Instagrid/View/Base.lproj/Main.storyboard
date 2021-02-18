@@ -435,6 +435,19 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outletCollection property="layoutChoice" destination="NN3-zm-dkG" collectionClass="NSMutableArray" id="6mM-la-WUs"/>
+                        <outletCollection property="layoutChoice" destination="UPu-nR-n7f" collectionClass="NSMutableArray" id="SSS-Ag-hLA"/>
+                        <outletCollection property="layoutChoice" destination="Ohi-1N-0Jt" collectionClass="NSMutableArray" id="274-r6-gCj"/>
+                        <outletCollection property="layoutVue" destination="kp3-IS-e7M" collectionClass="NSMutableArray" id="H5w-P8-06y"/>
+                        <outletCollection property="LayoutChoice" destination="NN3-zm-dkG" collectionClass="NSMutableArray" id="aJJ-bP-SYA"/>
+                        <outletCollection property="layoutVue" destination="Bju-Nu-YCC" collectionClass="NSMutableArray" id="4SJ-Gv-sKG"/>
+                        <outletCollection property="layoutVue" destination="lQ3-PE-a2s" collectionClass="NSMutableArray" id="SXu-Ss-VRL"/>
+                        <outletCollection property="layoutVue" destination="6RJ-hp-I2B" collectionClass="NSMutableArray" id="LxR-OB-MVm"/>
+                        <outletCollection property="layoutVue" destination="nN4-yT-Ulj" collectionClass="NSMutableArray" id="kib-EB-Uj1"/>
+                        <outletCollection property="LayoutChoice" destination="UPu-nR-n7f" collectionClass="NSMutableArray" id="8Tu-XM-0ml"/>
+                        <outletCollection property="LayoutChoice" destination="Ohi-1N-0Jt" collectionClass="NSMutableArray" id="O9x-qr-xF2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" id="6c1-NZ-iG9">
