@@ -72,7 +72,7 @@
                                             <constraint firstAttribute="height" constant="70" id="1CH-6F-h6a"/>
                                             <constraint firstAttribute="width" constant="70" id="q2S-tU-CoU"/>
                                         </constraints>
-                                        <state key="normal" image="Layout 2" backgroundImage="Layout 2"/>
+                                        <state key="normal" image="Selected" backgroundImage="Layout 2"/>
                                         <connections>
                                             <action selector="layoutChoice2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pkn-av-lPQ"/>
                                         </connections>
@@ -117,6 +117,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="133" height="133"/>
                                                         <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="layoutChoosePict:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i4q-hu-R3w"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ3-PE-a2s">
                                                         <rect key="frame" x="141" y="0.0" width="133" height="133"/>
@@ -145,12 +148,12 @@
                                                 <rect key="frame" x="0.0" y="141" width="274" height="133"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RJ-hp-I2B">
-                                                        <rect key="frame" x="0.0" y="0.0" width="133" height="133"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="274" height="133"/>
                                                         <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" image="Plus"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN4-yT-Ulj">
-                                                        <rect key="frame" x="141" y="0.0" width="133" height="133"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN4-yT-Ulj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="133"/>
                                                         <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" image="Plus"/>
                                                     </button>
@@ -448,7 +451,7 @@
                         <outlet property="layoutButton1" destination="NN3-zm-dkG" id="86V-rB-PXz"/>
                         <outlet property="layoutButton2" destination="UPu-nR-n7f" id="xJ1-0w-ETD"/>
                         <outlet property="layoutButton3" destination="Ohi-1N-0Jt" id="KXX-md-QOj"/>
-                        <outlet property="layoutView1" destination="Bju-Nu-YCC" id="xgi-Kq-DGF"/>
+                        <outlet property="layoutView1" destination="Bju-Nu-YCC" id="JXh-pV-fGW"/>
                         <outlet property="layoutView2" destination="lQ3-PE-a2s" id="SNh-z6-tAd"/>
                         <outlet property="layoutView3" destination="6RJ-hp-I2B" id="AR5-Wi-cJj"/>
                         <outlet property="layoutView4" destination="nN4-yT-Ulj" id="SrX-HT-UAo"/>
@@ -483,7 +486,7 @@
                     </constraints>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="96.7016491754123" y="74.400000000000006"/>
+            <point key="canvasLocation" x="95.200000000000003" y="74.212893553223395"/>
         </scene>
     </scenes>
     <resources>
@@ -493,6 +496,7 @@
         <image name="Layout 2" width="27" height="27"/>
         <image name="Layout 3" width="27" height="27"/>
         <image name="Plus" width="13.5" height="13.5"/>
+        <image name="Selected" width="27" height="27"/>
         <image name="imageView:i3g-ct-65h:image" width="3.5" height="4.5">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
@@ -506,8 +510,8 @@ AAEBAAMAAAABAAUAAAECAAMAAAAEAAABRgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAEKAAMAAAABAAEA
 AAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAAUAAAEXAAQAAAABAAAA
 UAEaAAUAAAABAAABNgEbAAUAAAABAAABPgEcAAMAAAABAAEAAAEoAAMAAAABAAIAAAFSAAMAAAABAAEA
 AAFTAAMAAAAEAAABTodzAAcAAAIUAAABVgAAAAD/////AxxxxwAAAFAAAAABAAgACAAIAAgAAQABAAEA
-AQAAAhRhcHBsBAAAAG1udHJSR0IgWFlaIAflAAIAEgAMABwAI2Fjc3BBUFBMAAAAAEFQUEwAAAAAAAAA
-AAAAAAAAAAAAAAD21gABAAAAANMtYXBwbMub2lKMASzPq5H6VHZGEdwAAAAAAAAAAAAAAAAAAAAAAAAA
+AQAAAhRhcHBsBAAAAG1udHJSR0IgWFlaIAflAAIAEgAUABAAImFjc3BBUFBMAAAAAEFQUEwAAAAAAAAA
+AAAAAAAAAAAAAAD21gABAAAAANMtYXBwbIXsxkQxm+lCmkbvf0pJw4oAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAACmRlc2MAAAD8AAAAZWNwcnQAAAFkAAAAI3d0cHQAAAGIAAAAFHJYWVoAAAGcAAAA
 FGdYWVoAAAGwAAAAFGJYWVoAAAHEAAAAFHJUUkMAAAHYAAAAEGNoYWQAAAHoAAAALGJUUkMAAAHYAAAA
 EGdUUkMAAAHYAAAAEGRlc2MAAAAAAAAAC0xHIEZVTEwgSEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -525,8 +529,8 @@ mZkbGxsbABIBAAADAAAAAQAHAAABAQADAAAAAQAJAAABAgADAAAABAAAAfIBAwADAAAAAQABAAABBgAD
 AAAAAQACAAABCgADAAAAAQABAAABEQAEAAAAAQAAAAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgAD
 AAAAAQAJAAABFwAEAAAAAQAAAPwBGgAFAAAAAQAAAeIBGwAFAAAAAQAAAeoBHAADAAAAAQABAAABKAAD
 AAAAAQACAAABUgADAAAAAQABAAABUwADAAAABAAAAfqHcwAHAAACFAAAAgIAAAAAAAAAkAAAAAEAAACQ
-AAAAAQAIAAgACAAIAAEAAQABAAEAAAIUYXBwbAQAAABtbnRyUkdCIFhZWiAH5QACABIADAAcACNhY3Nw
-QVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGzLm9pSjAEsz6uR+lR2RhHc
+AAAAAQAIAAgACAAIAAEAAQABAAEAAAIUYXBwbAQAAABtbnRyUkdCIFhZWiAH5QACABIAFAAQACJhY3Nw
+QVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGyF7MZEMZvpQppG739KScOK
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAAGVjcHJ0AAABZAAAACN3dHB0
 AAABiAAAABRyWFlaAAABnAAAABRnWFlaAAABsAAAABRiWFlaAAABxAAAABRyVFJDAAAB2AAAABBjaGFk
 AAAB6AAAACxiVFJDAAAB2AAAABBnVFJDAAAB2AAAABBkZXNjAAAAAAAAAAtMRyBGVUxMIEhEAAAAAAAA
@@ -549,8 +553,8 @@ Iw4ODg4AEgEAAAMAAAABAAsAAAEBAAMAAAABAA4AAAECAAMAAAAEAAADXgEDAAMAAAABAAEAAAEGAAMA
 AAABAAIAAAEKAAMAAAABAAEAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMA
 AAABAA4AAAEXAAQAAAABAAACaAEaAAUAAAABAAADTgEbAAUAAAABAAADVgEcAAMAAAABAAEAAAEoAAMA
 AAABAAIAAAFSAAMAAAABAAEAAAFTAAMAAAAEAAADZodzAAcAAAIUAAADbgAAAAD/////ASGdvAAAAOAA
-AAABAAgACAAIAAgAAQABAAEAAQAAAhRhcHBsBAAAAG1udHJSR0IgWFlaIAflAAIAEgAMABwAI2Fjc3BB
-UFBMAAAAAEFQUEwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbMub2lKMASzPq5H6VHZGEdwA
+AAABAAgACAAIAAgAAQABAAEAAQAAAhRhcHBsBAAAAG1udHJSR0IgWFlaIAflAAIAEgAUABAAImFjc3BB
+UFBMAAAAAEFQUEwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbIXsxkQxm+lCmkbvf0pJw4oA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmRlc2MAAAD8AAAAZWNwcnQAAAFkAAAAI3d0cHQA
 AAGIAAAAFHJYWVoAAAGcAAAAFGdYWVoAAAGwAAAAFGJYWVoAAAHEAAAAFHJUUkMAAAHYAAAAEGNoYWQA
 AAHoAAAALGJUUkMAAAHYAAAAEGdUUkMAAAHYAAAAEGRlc2MAAAAAAAAAC0xHIEZVTEwgSEQAAAAAAAAA

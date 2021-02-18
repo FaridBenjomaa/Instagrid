@@ -7,15 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
+ 
+    
+
+    
+    
     let selected = UIImage(named: "Selected")
     let layout1 = UIImage(named: "Layout 1")
     let layout2 = UIImage(named: "Layout 2")
     let layout3 = UIImage(named: "Layout 3")
    
     
-    @IBOutlet weak var layoutView1: UIButton!
+    
+    
+    @IBOutlet weak var layoutView1: UIImageView!
     @IBOutlet weak var layoutView2: UIButton!
     @IBOutlet weak var layoutView3: UIButton!
     @IBOutlet weak var layoutView4: UIButton!
@@ -28,11 +35,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func layoutChoosePict(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        
+            
+        }
+       
        
     }
+    
+  
 
     
-
     @IBAction func layoutChoice1(_ sender: UIButton) {
         layoutView2.isHidden = true
         layoutView4.isHidden = false
