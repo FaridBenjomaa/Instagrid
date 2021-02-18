@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="width" constant="26" id="Yi7-BA-uoL"/>
                                     <constraint firstAttribute="height" constant="18" id="ah2-R3-qt4"/>
                                 </constraints>
-                                <variation key="heightClass=compact-widthClass=compact" image="Arrow Left"/>
+                                <variation key="heightClass=compact-widthClass=compact" image="imageView:i3g-ct-65h:image"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="Ih2-JG-ytx">
                                 <rect key="frame" x="117.5" y="20" width="140" height="30"/>
@@ -53,31 +53,40 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="g4p-rH-xs7">
                                 <rect key="frame" x="47.5" y="577" width="280" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NN3-zm-dkG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NN3-zm-dkG" userLabel="layout1">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="cJ4-bW-T4n"/>
                                             <constraint firstAttribute="height" constant="70" id="lgY-oU-dGw"/>
                                         </constraints>
-                                        <state key="normal" image="Selected" backgroundImage="Layout 1">
+                                        <state key="normal" image="Layout 1" backgroundImage="Layout 1">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
+                                        <connections>
+                                            <action selector="layoutChoice1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BMR-85-2N0"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-nR-n7f">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-nR-n7f" userLabel="layout2">
                                         <rect key="frame" x="105" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="1CH-6F-h6a"/>
                                             <constraint firstAttribute="width" constant="70" id="q2S-tU-CoU"/>
                                         </constraints>
-                                        <state key="normal" image="Selected" backgroundImage="Layout 2"/>
+                                        <state key="normal" image="Layout 2" backgroundImage="Layout 2"/>
+                                        <connections>
+                                            <action selector="layoutChoice2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pkn-av-lPQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohi-1N-0Jt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohi-1N-0Jt" userLabel="layout3">
                                         <rect key="frame" x="210" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="b5d-Vw-HH8"/>
                                             <constraint firstAttribute="width" constant="70" id="lKo-lu-hgu"/>
                                         </constraints>
-                                        <state key="normal" image="Selected" backgroundImage="Layout 3"/>
+                                        <state key="normal" image="Layout 3" backgroundImage="Layout 3"/>
+                                        <connections>
+                                            <action selector="layoutChoice3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bUs-Yj-3bS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -436,17 +445,13 @@
                         </variation>
                     </view>
                     <connections>
-                        <outletCollection property="layoutChoice" destination="NN3-zm-dkG" collectionClass="NSMutableArray" id="6mM-la-WUs"/>
-                        <outletCollection property="layoutChoice" destination="UPu-nR-n7f" collectionClass="NSMutableArray" id="SSS-Ag-hLA"/>
-                        <outletCollection property="layoutChoice" destination="Ohi-1N-0Jt" collectionClass="NSMutableArray" id="274-r6-gCj"/>
-                        <outletCollection property="layoutVue" destination="kp3-IS-e7M" collectionClass="NSMutableArray" id="H5w-P8-06y"/>
-                        <outletCollection property="LayoutChoice" destination="NN3-zm-dkG" collectionClass="NSMutableArray" id="aJJ-bP-SYA"/>
-                        <outletCollection property="layoutVue" destination="Bju-Nu-YCC" collectionClass="NSMutableArray" id="4SJ-Gv-sKG"/>
-                        <outletCollection property="layoutVue" destination="lQ3-PE-a2s" collectionClass="NSMutableArray" id="SXu-Ss-VRL"/>
-                        <outletCollection property="layoutVue" destination="6RJ-hp-I2B" collectionClass="NSMutableArray" id="LxR-OB-MVm"/>
-                        <outletCollection property="layoutVue" destination="nN4-yT-Ulj" collectionClass="NSMutableArray" id="kib-EB-Uj1"/>
-                        <outletCollection property="LayoutChoice" destination="UPu-nR-n7f" collectionClass="NSMutableArray" id="8Tu-XM-0ml"/>
-                        <outletCollection property="LayoutChoice" destination="Ohi-1N-0Jt" collectionClass="NSMutableArray" id="O9x-qr-xF2"/>
+                        <outlet property="layoutButton1" destination="NN3-zm-dkG" id="86V-rB-PXz"/>
+                        <outlet property="layoutButton2" destination="UPu-nR-n7f" id="xJ1-0w-ETD"/>
+                        <outlet property="layoutButton3" destination="Ohi-1N-0Jt" id="KXX-md-QOj"/>
+                        <outlet property="layoutView1" destination="Bju-Nu-YCC" id="xgi-Kq-DGF"/>
+                        <outlet property="layoutView2" destination="lQ3-PE-a2s" id="SNh-z6-tAd"/>
+                        <outlet property="layoutView3" destination="6RJ-hp-I2B" id="AR5-Wi-cJj"/>
+                        <outlet property="layoutView4" destination="nN4-yT-Ulj" id="SrX-HT-UAo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -482,13 +487,161 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Arrow Left" width="3.5" height="4.5"/>
         <image name="Arrow Up" width="4.5" height="3.5"/>
         <image name="Instagrid" width="41.5" height="13"/>
         <image name="Layout 1" width="27" height="27"/>
         <image name="Layout 2" width="27" height="27"/>
         <image name="Layout 3" width="27" height="27"/>
         <image name="Plus" width="13.5" height="13.5"/>
-        <image name="Selected" width="27" height="27"/>
+        <image name="imageView:i3g-ct-65h:image" width="3.5" height="4.5">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
+S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBcLDBkaIRQmKywzNjs+P0RHSEtVXV5iZVUkbnVsbNYNDg8Q
+ERITFBUWFxhWTlNTaXplXk5TUmVzaXppbmdNb2RlViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05T
+Q29sb3KAAhAAgBYSIMAAAIADgBFaezMuNSwgNC41fdIbDxwgWk5TLm9iamVjdHOjHR4fgASACoANgBDS
+Gw8iJaIjJIAFgAaACdMPJygpKhRfEBROU1RJRkZSZXByZXNlbnRhdGlvbl8QGU5TSW50ZXJuYWxMYXlv
+dXREaXJlY3Rpb26ACIAHTxEDak1NACoAAABYAQEBARISEhJKSkpKGBgYGEFBQUGFhYWFa2traxISEhLN
+zc3Nc3NzcwwMDAwBAQEBMjIyMoaGhoZpaWlpDQ0NDQAAAAAMDAwMXFxcXCYmJiYAEgEAAAMAAAABAAQA
+AAEBAAMAAAABAAUAAAECAAMAAAAEAAABRgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAEKAAMAAAABAAEA
+AAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAAUAAAEXAAQAAAABAAAA
+UAEaAAUAAAABAAABNgEbAAUAAAABAAABPgEcAAMAAAABAAEAAAEoAAMAAAABAAIAAAFSAAMAAAABAAEA
+AAFTAAMAAAAEAAABTodzAAcAAAIUAAABVgAAAAD/////AxxxxwAAAFAAAAABAAgACAAIAAgAAQABAAEA
+AQAAAhRhcHBsBAAAAG1udHJSR0IgWFlaIAflAAIAEgAMABwAI2Fjc3BBUFBMAAAAAEFQUEwAAAAAAAAA
+AAAAAAAAAAAAAAD21gABAAAAANMtYXBwbMub2lKMASzPq5H6VHZGEdwAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAACmRlc2MAAAD8AAAAZWNwcnQAAAFkAAAAI3d0cHQAAAGIAAAAFHJYWVoAAAGcAAAA
+FGdYWVoAAAGwAAAAFGJYWVoAAAHEAAAAFHJUUkMAAAHYAAAAEGNoYWQAAAHoAAAALGJUUkMAAAHYAAAA
+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
+AAAAAAAAAAAAAAAAAAAAdGV4dAAAAABDb3B5cmlnaHQgQXBwbGUgSW5jLiwgMjAyMQAAWFlaIAAAAAAA
+APPYAAEAAAABFghYWVogAAAAAAAAcVoAADpJAAACbVhZWiAAAAAAAABgUAAAuPAAABBjWFlaIAAAAAAA
+ACUsAAAMxwAAwF1wYXJhAAAAAAAAAAAAAfYEc2YzMgAAAAAAAQu3AAAFlv//81cAAAcpAAD91///+7f/
+//2mAAAD2gAAwPbSLS5JSl5OU011dGFibGVBcnJheaNJNDLVTE1OTw9QUVJTVFdOU1doaXRlXE5TQ29t
+cG9uZW50c1xOU0NvbG9yU3BhY2VfEBJOU0N1c3RvbUNvbG9yU3BhY2VEMCAwAEMwIDAQA4ASgBXUVldY
+D1laW1xUTlNJRFVOU0lDQ1dOU01vZGVsEAmAExAAgBRPERGcAAARnGFwcGwCAAAAbW50ckdSQVlYWVog
+B9wACAAXAA8ALgAPYWNzcEFQUEwAAAAAbm9uZQAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBs
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFZGVzYwAAAMAAAAB5
+ZHNjbQAAATwAAAgaY3BydAAACVgAAAAjd3RwdAAACXwAAAAUa1RSQwAACZAAAAgMZGVzYwAAAAAAAAAf
+R2VuZXJpYyBHcmF5IEdhbW1hIDIuMiBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAA
+AAAAHwAAAAxza1NLAAAALgAAAYRkYURLAAAAOgAAAbJjYUVTAAAAOAAAAex2aVZOAAAAQAAAAiRwdEJS
+AAAASgAAAmR1a1VBAAAALAAAAq5mckZVAAAAPgAAAtpodUhVAAAANAAAAxh6aFRXAAAAGgAAA0xrb0tS
+AAAAIgAAA2ZuYk5PAAAAOgAAA4hjc0NaAAAAKAAAA8JoZUlMAAAAJAAAA+pyb1JPAAAAKgAABA5kZURF
+AAAATgAABDhpdElUAAAATgAABIZzdlNFAAAAOAAABNR6aENOAAAAGgAABQxqYUpQAAAAJgAABSZlbEdS
+AAAAKgAABUxwdFBPAAAAUgAABXZubE5MAAAAQAAABchlc0VTAAAATAAABgh0aFRIAAAAMgAABlR0clRS
+AAAAJAAABoZmaUZJAAAARgAABqpockhSAAAAPgAABvBwbFBMAAAASgAABy5hckVHAAAALAAAB3hydVJV
+AAAAOgAAB6RlblVTAAAAPAAAB94AVgFhAGUAbwBiAGUAYwBuAOEAIABzAGkAdgDhACAAZwBhAG0AYQAg
+ADIALAAyAEcAZQBuAGUAcgBpAHMAawAgAGcAcgDlACAAMgAsADIAIABnAGEAbQBtAGEALQBwAHIAbwBm
+AGkAbABHAGEAbQBtAGEAIABkAGUAIABnAHIAaQBzAG8AcwAgAGcAZQBuAOgAcgBpAGMAYQAgADIALgAy
+AEMepQB1ACAAaADsAG4AaAAgAE0A4AB1ACAAeADhAG0AIABDAGgAdQBuAGcAIABHAGEAbQBtAGEAIAAy
+AC4AMgBQAGUAcgBmAGkAbAAgAEcAZQBuAOkAcgBpAGMAbwAgAGQAYQAgAEcAYQBtAGEAIABkAGUAIABD
+AGkAbgB6AGEAcwAgADIALAAyBBcEMAQzBDAEOwRMBD0EMAAgAEcAcgBhAHkALQQzBDAEPAQwACAAMgAu
+ADIAUAByAG8AZgBpAGwAIABnAOkAbgDpAHIAaQBxAHUAZQAgAGcAcgBpAHMAIABnAGEAbQBtAGEAIAAy
+ACwAMgDBAGwAdABhAGwA4QBuAG8AcwAgAHMAegD8AHIAawBlACAAZwBhAG0AbQBhACAAMgAuADKQGnUo
+cHCWjlFJXqYAMgAuADKCcl9pY8+P8Md8vBgAINaMwMkAIKwQucgAIAAyAC4AMgAg1QS4XNMMx3wARwBl
+AG4AZQByAGkAcwBrACAAZwByAOUAIABnAGEAbQBtAGEAIAAyACwAMgAtAHAAcgBvAGYAaQBsAE8AYgBl
+AGMAbgDhACABYQBlAGQA4QAgAGcAYQBtAGEAIAAyAC4AMgXSBdAF3gXUACAF0AXkBdUF6AAgBdsF3AXc
+BdkAIAAyAC4AMgBHAGEAbQBhACAAZwByAGkAIABnAGUAbgBlAHIAaQBjAQMAIAAyACwAMgBBAGwAbABn
+AGUAbQBlAGkAbgBlAHMAIABHAHIAYQB1AHMAdAB1AGYAZQBuAC0AUAByAG8AZgBpAGwAIABHAGEAbQBt
+AGEAIAAyACwAMgBQAHIAbwBmAGkAbABvACAAZwByAGkAZwBpAG8AIABnAGUAbgBlAHIAaQBjAG8AIABk
+AGUAbABsAGEAIABnAGEAbQBtAGEAIAAyACwAMgBHAGUAbgBlAHIAaQBzAGsAIABnAHIA5QAgADIALAAy
+ACAAZwBhAG0AbQBhAHAAcgBvAGYAaQBsZm6QGnBwXqZ8+2VwADIALgAyY8+P8GWHTvZOAIIsMLAw7DCk
+MKww8zDeACAAMgAuADIAIDDXMO0w1TChMKQw6wOTA7UDvQO5A7oDzAAgA5MDugPBA7kAIAOTA6wDvAO8
+A7EAIAAyAC4AMgBQAGUAcgBmAGkAbAAgAGcAZQBuAOkAcgBpAGMAbwAgAGQAZQAgAGMAaQBuAHoAZQBu
+AHQAbwBzACAAZABhACAARwBhAG0AbQBhACAAMgAsADIAQQBsAGcAZQBtAGUAZQBuACAAZwByAGkAagBz
+ACAAZwBhAG0AbQBhACAAMgAsADIALQBwAHIAbwBmAGkAZQBsAFAAZQByAGYAaQBsACAAZwBlAG4A6QBy
+AGkAYwBvACAAZABlACAAZwBhAG0AbQBhACAAZABlACAAZwByAGkAcwBlAHMAIAAyACwAMg4jDjEOBw4q
+DjUOQQ4BDiEOIQ4yDkAOAQ4jDiIOTA4XDjEOSA4nDkQOGwAgADIALgAyAEcAZQBuAGUAbAAgAEcAcgBp
+ACAARwBhAG0AYQAgADIALAAyAFkAbABlAGkAbgBlAG4AIABoAGEAcgBtAGEAYQBuACAAZwBhAG0AbQBh
+ACAAMgAsADIAIAAtAHAAcgBvAGYAaQBpAGwAaQBHAGUAbgBlAHIAaQENAGsAaQAgAEcAcgBhAHkAIABH
+AGEAbQBtAGEAIAAyAC4AMgAgAHAAcgBvAGYAaQBsAFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBv
+AGYAaQBsACAAcwB6AGEAcgBvAVsAYwBpACAAZwBhAG0AbQBhACAAMgAsADIGOgYnBkUGJwAgADIALgAy
+ACAGRAZIBkYAIAYxBkUGJwYvBkoAIAY5BicGRQQeBDEESQQwBE8AIARBBDUEQAQwBE8AIAQzBDAEPAQ8
+BDAAIAAyACwAMgAtBD8EQAQ+BEQEOAQ7BEwARwBlAG4AZQByAGkAYwAgAEcAcgBhAHkAIABHAGEAbQBt
+AGEAIAAyAC4AMgAgAFAAcgBvAGYAaQBsAGUAAHRleHQAAAAAQ29weXJpZ2h0IEFwcGxlIEluYy4sIDIw
+MTIAAFhZWiAAAAAAAADzUQABAAAAARbMY3VydgAAAAAAAAQAAAAABQAKAA8AFAAZAB4AIwAoAC0AMgA3
+ADsAQABFAEoATwBUAFkAXgBjAGgAbQByAHcAfACBAIYAiwCQAJUAmgCfAKQAqQCuALIAtwC8AMEAxgDL
+ANAA1QDbAOAA5QDrAPAA9gD7AQEBBwENARMBGQEfASUBKwEyATgBPgFFAUwBUgFZAWABZwFuAXUBfAGD
+AYsBkgGaAaEBqQGxAbkBwQHJAdEB2QHhAekB8gH6AgMCDAIUAh0CJgIvAjgCQQJLAlQCXQJnAnECegKE
+Ao4CmAKiAqwCtgLBAssC1QLgAusC9QMAAwsDFgMhAy0DOANDA08DWgNmA3IDfgOKA5YDogOuA7oDxwPT
+A+AD7AP5BAYEEwQgBC0EOwRIBFUEYwRxBH4EjASaBKgEtgTEBNME4QTwBP4FDQUcBSsFOgVJBVgFZwV3
+BYYFlgWmBbUFxQXVBeUF9gYGBhYGJwY3BkgGWQZqBnsGjAadBq8GwAbRBuMG9QcHBxkHKwc9B08HYQd0
+B4YHmQesB78H0gflB/gICwgfCDIIRghaCG4IggiWCKoIvgjSCOcI+wkQCSUJOglPCWQJeQmPCaQJugnP
+CeUJ+woRCicKPQpUCmoKgQqYCq4KxQrcCvMLCwsiCzkLUQtpC4ALmAuwC8gL4Qv5DBIMKgxDDFwMdQyO
+DKcMwAzZDPMNDQ0mDUANWg10DY4NqQ3DDd4N+A4TDi4OSQ5kDn8Omw62DtIO7g8JDyUPQQ9eD3oPlg+z
+D88P7BAJECYQQxBhEH4QmxC5ENcQ9RETETERTxFtEYwRqhHJEegSBxImEkUSZBKEEqMSwxLjEwMTIxND
+E2MTgxOkE8UT5RQGFCcUSRRqFIsUrRTOFPAVEhU0FVYVeBWbFb0V4BYDFiYWSRZsFo8WshbWFvoXHRdB
+F2UXiReuF9IX9xgbGEAYZRiKGK8Y1Rj6GSAZRRlrGZEZtxndGgQaKhpRGncanhrFGuwbFBs7G2Mbihuy
+G9ocAhwqHFIcexyjHMwc9R0eHUcdcB2ZHcMd7B4WHkAeah6UHr4e6R8THz4faR+UH78f6iAVIEEgbCCY
+IMQg8CEcIUghdSGhIc4h+yInIlUigiKvIt0jCiM4I2YjlCPCI/AkHyRNJHwkqyTaJQklOCVoJZclxyX3
+JicmVyaHJrcm6CcYJ0kneierJ9woDSg/KHEooijUKQYpOClrKZ0p0CoCKjUqaCqbKs8rAis2K2krnSvR
+LAUsOSxuLKIs1y0MLUEtdi2rLeEuFi5MLoIuty7uLyQvWi+RL8cv/jA1MGwwpDDbMRIxSjGCMbox8jIq
+MmMymzLUMw0zRjN/M7gz8TQrNGU0njTYNRM1TTWHNcI1/TY3NnI2rjbpNyQ3YDecN9c4FDhQOIw4yDkF
+OUI5fzm8Ofk6Njp0OrI67zstO2s7qjvoPCc8ZTykPOM9Ij1hPaE94D4gPmA+oD7gPyE/YT+iP+JAI0Bk
+QKZA50EpQWpBrEHuQjBCckK1QvdDOkN9Q8BEA0RHRIpEzkUSRVVFmkXeRiJGZ0arRvBHNUd7R8BIBUhL
+SJFI10kdSWNJqUnwSjdKfUrESwxLU0uaS+JMKkxyTLpNAk1KTZNN3E4lTm5Ot08AT0lPk0/dUCdQcVC7
+UQZRUFGbUeZSMVJ8UsdTE1NfU6pT9lRCVI9U21UoVXVVwlYPVlxWqVb3V0RXklfgWC9YfVjLWRpZaVm4
+WgdaVlqmWvVbRVuVW+VcNVyGXNZdJ114XcleGl5sXr1fD19hX7NgBWBXYKpg/GFPYaJh9WJJYpxi8GND
+Y5dj62RAZJRk6WU9ZZJl52Y9ZpJm6Gc9Z5Nn6Wg/aJZo7GlDaZpp8WpIap9q92tPa6dr/2xXbK9tCG1g
+bbluEm5rbsRvHm94b9FwK3CGcOBxOnGVcfByS3KmcwFzXXO4dBR0cHTMdSh1hXXhdj52m3b4d1Z3s3gR
+eG54zHkqeYl553pGeqV7BHtje8J8IXyBfOF9QX2hfgF+Yn7CfyN/hH/lgEeAqIEKgWuBzYIwgpKC9INX
+g7qEHYSAhOOFR4Wrhg6GcobXhzuHn4gEiGmIzokziZmJ/opkisqLMIuWi/yMY4zKjTGNmI3/jmaOzo82
+j56QBpBukNaRP5GokhGSepLjk02TtpQglIqU9JVflcmWNJaflwqXdZfgmEyYuJkkmZCZ/JpomtWbQpuv
+nByciZz3nWSd0p5Anq6fHZ+Ln/qgaaDYoUehtqImopajBqN2o+akVqTHpTilqaYapoum/adup+CoUqjE
+qTepqaocqo+rAqt1q+msXKzQrUStuK4trqGvFq+LsACwdbDqsWCx1rJLssKzOLOutCW0nLUTtYq2AbZ5
+tvC3aLfguFm40blKucK6O7q1uy67p7whvJu9Fb2Pvgq+hL7/v3q/9cBwwOzBZ8Hjwl/C28NYw9TEUcTO
+xUvFyMZGxsPHQce/yD3IvMk6ybnKOMq3yzbLtsw1zLXNNc21zjbOts83z7jQOdC60TzRvtI/0sHTRNPG
+1EnUy9VO1dHWVdbY11zX4Nhk2OjZbNnx2nba+9uA3AXcit0Q3ZbeHN6i3ynfr+A24L3hROHM4lPi2+Nj
+4+vkc+T85YTmDeaW5x/nqegy6LzpRunQ6lvq5etw6/vshu0R7ZzuKO6070DvzPBY8OXxcvH/8ozzGfOn
+9DT0wvVQ9d72bfb794r4Gfio+Tj5x/pX+uf7d/wH/Jj9Kf26/kv+3P9t///SLS5fYFxOU0NvbG9yU3Bh
+Y2WiYTJcTlNDb2xvclNwYWNl0i0uY2RXTlNDb2xvcqJjMtItLmZnV05TSW1hZ2WiZjIACAARABoAJAAp
+ADIANwBJAEwAUQBTAG0AcwCAAIcAlgCdAKoAsQC5ALsAvQC/AMQAxgDIANMA2ADjAOcA6QDrAO0A7wD0
+APcA+QD7AP0BBAEbATcBOQE7BKkErgS5BMIE1QTZBOQE7QTyBPoE/QUCBQUFBwUJBQsFEgUUBRYJMAk1
+CTgJOgk8CT4JRQlHCUkOzw7UDuMO5w7yDvoPBw8UDykPLg8yDzQPNg84D0EPRg9MD1QPVg9YD1oPXCD8
+IQEhDiERIR4hIyErIS4hMyE7AAAAAAAAAgEAAAAAAAAAaAAAAAAAAAAAAAAAAAAAIT4
+</mutableData>
+        </image>
     </resources>
 </document>

@@ -64,6 +64,7 @@
 		75925ED325DAB45F007729DA /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				75925EE225DAB462007729DA /* Info.plist */,
 				75AEBF0D25DE6FFD00709376 /* Supporting Files */,
 				75AEBF0B25DE6F9600709376 /* Model */,
 				75AEBF0A25DE6F8B00709376 /* View */,
@@ -106,7 +107,6 @@
 				75925F0E25DAB7E7007729DA /* Delm-Medium.otf */,
 				75925EDD25DAB462007729DA /* Assets.xcassets */,
 				75925EDF25DAB462007729DA /* LaunchScreen.storyboard */,
-				75925EE225DAB462007729DA /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.farid.benjomaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -363,7 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.farid.benjomaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

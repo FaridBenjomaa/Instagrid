@@ -12,4 +12,8 @@ class Layout {
     var name : String = ""
     
     
+    
+    func layoutChoice(){
+        
+    }
 }
