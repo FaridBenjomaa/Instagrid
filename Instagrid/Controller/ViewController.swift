@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
 
   
+    @IBOutlet var MyImageView: [UIImageView]!
     
     let selected = UIImage(named: "Selected")
     let layout1 = UIImage(named: "Layout 1")
@@ -33,26 +34,44 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     @IBOutlet weak var layoutButton2: UIButton!
     @IBOutlet weak var layoutButton3: UIButton!
     
+    var tag = 0
+ 
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         layoutChoosePict(tappedImage)
- 
+        tag = 1
     }
+    
     @objc func imageTapped2(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         layoutChoosePict(tappedImage)
-        
+        tag = 2
     }
+    @objc func imageTapped3(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        layoutChoosePict(tappedImage)
+        tag = 3
+    }
+    @objc func imageTapped4(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        layoutChoosePict(tappedImage)
+        tag = 4
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(imageTapped2(tapGestureRecognizer:)))
+            let tapGestureRecognizer =  UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(imageTapped2(tapGestureRecognizer:)))
+            let tapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(imageTapped3(tapGestureRecognizer:)))
+            let tapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(imageTapped4(tapGestureRecognizer:)))
         
             layoutView1.isUserInteractionEnabled = true
             layoutView1.addGestureRecognizer(tapGestureRecognizer)
@@ -60,12 +79,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
             layoutView2.isUserInteractionEnabled = true
             layoutView2.addGestureRecognizer(tapGestureRecognizer2)
+        
+            layoutView3.isUserInteractionEnabled = true
+            layoutView3.addGestureRecognizer(tapGestureRecognizer3)
+        
+            layoutView4.isUserInteractionEnabled = true
+            layoutView4.addGestureRecognizer(tapGestureRecognizer4)
 
     }
-    
-    
-    
-    
+
    func layoutChoosePict(_ sender: UIImageView) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -76,10 +98,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
 
         }
     }
-    
-  
 
-    
     @IBAction func layoutChoice1(_ sender: UIButton) {
         view2.isHidden = true
         view4.isHidden = false
@@ -104,41 +123,64 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         layoutButton3.setImage(selected, for: UIControl.State.normal)
     }
     
+    
+    func setImage (tag: Int) -> UIImageView{
+        let imageView = self.view.viewWithTag(tag) as! UIImageView
+        imageView.image = UIImage(named:"myGraphicName")
+        return imageView
+    }
+    
+    
+    
     // Fonction ajout de photos
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
         
+        func imageChoose(layoutview: UIImageView){
             if let imageSelect = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                layoutView1.image = imageSelect
-                layoutView1.contentMode = .scaleAspectFill
-                layoutView1.clipsToBounds = true
+                layoutview.image = imageSelect
+                layoutview.contentMode = .scaleAspectFill
+                layoutview.clipsToBounds = true
                 
             }
-        
-            let leadingConstraint = NSLayoutConstraint(item: layoutView1!, attribute: .leading, relatedBy: .equal, toItem: layoutView1.superview, attribute: .leading, multiplier: 1, constant: 0)
+            
+            let leadingConstraint = NSLayoutConstraint(item: layoutview, attribute: .leading, relatedBy: .equal, toItem: layoutview.superview, attribute: .leading, multiplier: 1, constant: 0)
             leadingConstraint.isActive = true
             
-            let trailingConstraint = NSLayoutConstraint(item: layoutView1!, attribute: .trailing, relatedBy: .equal, toItem: layoutView1.superview, attribute: .trailing, multiplier: 1, constant: 0)
+            let trailingConstraint = NSLayoutConstraint(item: layoutview, attribute: .trailing, relatedBy: .equal, toItem: layoutview.superview, attribute: .trailing, multiplier: 1, constant: 0)
             trailingConstraint.isActive = true
             
-            let topConstraint = NSLayoutConstraint(item: layoutView1!, attribute: .top, relatedBy: .equal, toItem: layoutView1.superview, attribute: .top, multiplier: 1, constant: 0)
+            let topConstraint = NSLayoutConstraint(item: layoutview, attribute: .top, relatedBy: .equal, toItem: layoutview.superview, attribute: .top, multiplier: 1, constant: 0)
             topConstraint.isActive = true
             
-            let bottomConstraint = NSLayoutConstraint(item: layoutView1!, attribute: .bottom, relatedBy: .equal, toItem: layoutView1.superview, attribute: .bottom, multiplier: 1, constant: 0)
+            let bottomConstraint = NSLayoutConstraint(item: layoutview, attribute: .bottom, relatedBy: .equal, toItem: layoutview.superview, attribute: .bottom, multiplier: 1, constant: 0)
             bottomConstraint.isActive = true
-      
-            
-            dismiss(animated: true, completion: nil)
         }
         
-    
-    
+        
+        switch tag {
+            case 1:
+                imageChoose(layoutview: layoutView1)
+               
+            case 2:
+                imageChoose(layoutview: layoutView2)
+                
+            case 3:
+                imageChoose(layoutview: layoutView3)
+                
+            case 4:
+                imageChoose(layoutview: layoutView4)
+                
+            default:
+            return
+        }
 
-       
-    
-    
-   
+        
+        dismiss(animated: true, completion: nil)
+            
+        }
+
     
 }
 

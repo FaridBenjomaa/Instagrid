@@ -473,6 +473,7 @@
                         <outlet property="view2" destination="EsR-OU-H92" id="k1D-8D-Fj8"/>
                         <outlet property="view3" destination="XCa-15-F0Y" id="vmi-3f-8i6"/>
                         <outlet property="view4" destination="cZ0-D9-TR1" id="PEc-Yh-BXu"/>
+                        <outletCollection property="MyImageView" destination="K3p-lB-sfM" collectionClass="NSMutableArray" id="atD-dm-xfB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
