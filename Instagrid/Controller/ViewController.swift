@@ -11,7 +11,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
 
     
 
-  
+    @IBOutlet var principalView: UIView!
+    
     @IBOutlet var MyImageView: [UIImageView]!
     
     let selected = UIImage(named: "Selected")
@@ -24,6 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     @IBOutlet weak var layoutView3: UIImageView!
     @IBOutlet weak var layoutView4: UIImageView!
     
+    @IBOutlet weak var swipeView: UIView!
     
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
@@ -63,7 +65,49 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         tag = 4
     }
 
+    
+    @objc func swipe(gesture: UISwipeGestureRecognizer) -> Void {
+    
+        let screenWidht = UIScreen.main.bounds.width
+        let screenHeigth = UIScreen.main.bounds.height
+    
+        
+        
+        let activityViewController =
+            UIActivityViewController(activityItems: [layoutView1.image!,layoutView2.image!,layoutView3.image!,layoutView4.image!],
+                                     applicationActivities: nil)
+ 
+        
+        if UIDevice.current.orientation.isLandscape {
+            if gesture.direction == .left {
+                
+                UIView.animate(withDuration: 0.5) {
+                    let swipeLeft = CGAffineTransform(translationX: -screenHeigth, y: 0)
+                    self.principalView.transform = swipeLeft
+                }
+                
+            }
+        }else if UIDevice.current.orientation.isPortrait{
+            if gesture.direction == .up {
+               
+                UIView.animate(withDuration: 0.5) {
+                    let swipeUp = CGAffineTransform(translationX: 0, y: -screenWidht)
+                    self.principalView.transform = swipeUp
+                }
+                   
+                
+            }
+        }
 
+        present(activityViewController, animated: true) {
+            
+        }
+   
+        
+    }
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,6 +129,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
             layoutView4.isUserInteractionEnabled = true
             layoutView4.addGestureRecognizer(tapGestureRecognizer4)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeLeft.direction = .left
+        swipeView.addGestureRecognizer(swipeLeft)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeUp.direction = .up
+        swipeView.addGestureRecognizer(swipeUp)
 
     }
 
@@ -98,7 +150,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
 
         }
     }
-
+    
     @IBAction func layoutChoice1(_ sender: UIButton) {
         view2.isHidden = true
         view4.isHidden = false
@@ -126,12 +178,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     func setImage (tag: Int) -> UIImageView{
         let imageView = self.view.viewWithTag(tag) as! UIImageView
-        imageView.image = UIImage(named:"myGraphicName")
+        imageView.image = UIImage(named:" ")
         return imageView
     }
     
-    
-    
+
     // Fonction ajout de photos
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
