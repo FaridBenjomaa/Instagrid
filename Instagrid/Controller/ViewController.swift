@@ -68,11 +68,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     @objc func swipe(gesture: UISwipeGestureRecognizer) -> Void {
     
-        let screenWidht = UIScreen.main.bounds.width
-        let screenHeigth = UIScreen.main.bounds.height
     
-        
-        
         let activityViewController =
             UIActivityViewController(activityItems: [layoutView1.image!,layoutView2.image!,layoutView3.image!,layoutView4.image!],
                                      applicationActivities: nil)
@@ -80,32 +76,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
         if UIDevice.current.orientation.isLandscape {
             if gesture.direction == .left {
-                
-                UIView.animate(withDuration: 0.5) {
-                    let swipeLeft = CGAffineTransform(translationX: -screenHeigth, y: 0)
-                    self.principalView.transform = swipeLeft
+                present(activityViewController, animated: true) {
+                    
+                    
                 }
+                
                 
             }
         }else if UIDevice.current.orientation.isPortrait{
             if gesture.direction == .up {
-               
-                UIView.animate(withDuration: 0.5) {
-                    let swipeUp = CGAffineTransform(translationX: 0, y: -screenWidht)
-                    self.principalView.transform = swipeUp
+                present(activityViewController, animated: true) {
+                    
+                    
                 }
-                   
                 
             }
         }
-
-        present(activityViewController, animated: true) {
-            
-        }
-   
-        
+  
     }
-
     
     
     override func viewDidLoad() {
